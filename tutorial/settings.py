@@ -14,6 +14,9 @@ BOT_NAME = 'tutorial'
 SPIDER_MODULES = ['tutorial.spiders']
 NEWSPIDER_MODULE = 'tutorial.spiders'
 
+MONGODB_SERVER = "localhost"
+MONGODB_PORT = 27017
+MONGODB_DB = "w17mm802"
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'tutorial (+http://www.yourdomain.com)'
@@ -65,7 +68,8 @@ ROBOTSTXT_OBEY = True
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    'tutorial.pipelines.CSStaffPipelineEx3': 300,
+   # 'tutorial.pipelines.CSStaffPipelineEx3': 300,
+    'tutorial.pipelines.CSStaffPipelineEx3Mongo': 400,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
