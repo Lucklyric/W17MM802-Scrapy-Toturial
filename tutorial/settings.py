@@ -69,7 +69,7 @@ ROBOTSTXT_OBEY = True
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
    # 'tutorial.pipelines.CSStaffPipelineEx3': 300,
-    'tutorial.pipelines.CSStaffPipelineEx3Mongo': 400,
+   # 'tutorial.pipelines.CSStaffPipelineEx3Mongo': 400,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
