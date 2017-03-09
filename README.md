@@ -12,7 +12,7 @@
 
  **Web Crawling**: Crawl to the deepest and widest of the webpages.
 
- **Web Scraper**: Involves extrating and retrieving information from web.
+ **Web Scraping**: Involves extrating and retrieving information from web.
  
 ## Introduction of Scrapy 
 [Scrapy:](https://scrapy.org/)
@@ -157,6 +157,7 @@ class CSStaff(scrapy.Item):
 ```
 
 Modify the spider file
+
 ```python
 import scrapy
 from tutorial.items import CSStaff
@@ -187,7 +188,6 @@ class CsSpider_ex3(scrapy.Spider):
             yield cs_staff_item
 ```
 
-```
 Define the pipeline in pipelines.py
 ```python
 from scrapy import log
@@ -208,7 +208,6 @@ class CSStaffPipelineEx3(object):
         self.file.write(line)
         log.msg("add"+item,level=log.DEBUG,spider=spider)
         return item
-
 ```
 Enable pipelines in setting.py
 ```python
