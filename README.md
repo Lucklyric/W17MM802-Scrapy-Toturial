@@ -1,4 +1,4 @@
-#Scrpay Tutorial W17MM802
+#Scrapy Tutorial W17MM802
 ## Table of Contents
  * [Objective](#background)
  * [Introudction of Scrapy](#introduction-of-scrapy)
