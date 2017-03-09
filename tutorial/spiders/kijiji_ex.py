@@ -1,6 +1,7 @@
 from scrapy.spider import CrawlSpider, Rule
 from scrapy.linkextractors import LinkExtractor
 from scrapy.exceptions import CloseSpider
+from tutorial.items import KijijiItem
 
 
 class KijijiSpider_ex(CrawlSpider):
@@ -23,16 +24,16 @@ class KijijiSpider_ex(CrawlSpider):
     }
 
     def parse_item(self, response):
-        kijiji_item = {}
+        kijiji_item = KijijiItem()
         ad_info = response.xpath('//table[@class="ad-attributes"]//tr')
         kijiji_item["date"] = ad_info[0].xpath("./td/text()").extract_first()
         kijiji_item["price"] = ad_info[1].xpath(
             './/span[@itemprop="price"]/strong/text()').extract_first()
         kijiji_item["brand"] = ad_info.xpath(
-            '//tr/span[@itemprop="brand"]/text()').extract_first()
+            '//span[@itemprop="brand"]/text()').extract_first()
         kijiji_item["title"] = response.xpath(
             '//span[@itemprop="name"]/h1/text()').extract_first()
         self.item_count += 1
-        if self.item_count > 10:
+        if self.item_count > 1000:
                 raise CloseSpider('item_exceeded')
-        return kijiji_item
+        yield kijiji_item

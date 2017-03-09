@@ -20,3 +20,9 @@ class CSStaff(scrapy.Item):
     area= scrapy.Field()
     phone= scrapy.Field()
     email= scrapy.Field()
+
+class KijijiItem(scrapy.Item):
+    title = scrapy.Field()
+    price = scrapy.Field()
+    date = scrapy.Field()
+    brand = scrapy.Field()
